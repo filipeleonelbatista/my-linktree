@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
 }
 
 p {
@@ -16,7 +15,9 @@ li {
 
 body {
   background: linear-gradient(101.07deg, #fa85d9 7.93%, #5e1349 93.3%);
-  background-repeat: ;
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   position: relative;
@@ -25,7 +26,7 @@ body {
 .container {
   margin: auto;
   width: 500px;
-  height: calc(100vh - 20px);
+  height: auto;
   margin: 20px 0 0 0;
   display: flex;
   flex-direction: column;
@@ -34,9 +35,7 @@ body {
 }
 
 #particles-js {
-  /* position: absolute; */
-  position: fixed;
-  z-index: -999;
+  position: absolute;
   width: 100%;
   height: 100%;
 }
@@ -66,11 +65,12 @@ body {
   width: 223px;
   justify-content: space-around;
   align-items: center;
-  background: rgba(224, 224, 224, 0.35);
+  background: rgba(224, 224, 224, 0.5);
   border-radius: 50px;
   position: absolute;
   top: -32px;
   left: calc(50% - 111px);
+  z-index: 100;
 }
 
 .social-media-container a {
@@ -81,9 +81,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
-.social-media-container svg {
+.social-media-container svg, 
+.social-media-container i{
   color: #5e1349;
 }
 
@@ -91,7 +93,7 @@ body {
   background: #fff;
   width: 100%;
   height: 100%;
-  border-radius: 50px 50px 0 0;
+  border-radius: 3.2rem 3.2rem 0 0;
   position: relative;
   margin-top: 40px;
 }
@@ -127,11 +129,11 @@ body {
 }
 
 .secondary-content.show {
-  animation: content-show 0.5s forwards;
+  animation: content-show 0.3s forwards;
 }
 
 .secondary-content.hide {
-  animation: content-hide 0.5s forwards;
+  animation: content-hide 0.3s forwards;
 }
 
 @keyframes content-show {
@@ -193,4 +195,10 @@ body {
   border: 1px solid #5e1349;
   color: #fff;
   font-weight: bold;
+}
+
+@media (max-width:425px){
+  .info-container {
+    border-radius: 0;
+  }
 }
