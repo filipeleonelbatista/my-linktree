@@ -62,7 +62,7 @@ body {
 .social-media-container {
   display: flex;
   height: 65px;
-  width: 223px;
+  width: 260px;
   justify-content: space-around;
   align-items: center;
   background: rgba(224, 224, 224, 0.5);
