@@ -95,7 +95,7 @@ body {
 }
 
 .social-media-container svg {
-  color: #2e3c87;
+  color: #ffcd1e;
 }
 
 .info-container {
@@ -110,7 +110,7 @@ body {
 .content {
   padding: 50px 30px 20px;
   width: 100%;
-  color: #2e3c87;
+  color: #ffcd1e;
   overflow: hidden;
   position: relative;
 }
@@ -192,7 +192,7 @@ body {
   border: 1px solid #bcbcbc;
   border-radius: 16px;
   text-decoration: none;
-  color: #2e3c87;
+  color: #ffcd1e;
   cursor: pointer;
   -webkit-box-shadow: 4px 4px 18px -5px rgba(179, 179, 179, 0.72);
   -moz-box-shadow: 4px 4px 18px -5px rgba(179, 179, 179, 0.72);
@@ -200,8 +200,8 @@ body {
 }
 
 .link.highlight {
-  background: #2e3c87;
-  border: 1px solid #2e3c87;
+  background: #ffcd1e;
+  border: 1px solid #ffcd1e;
   color: #fff;
   font-weight: bold;
 }
