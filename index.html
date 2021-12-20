@@ -30,7 +30,6 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-NZ5XMTT');</script>
   <!-- End Google Tag Manager -->
-
 </head>
 
 <body>
@@ -130,86 +129,137 @@
       </div>
     </div>
   </div>
+
+  <div>
+    <div id="call-to-action" class="call-to-action hidden">
+        Chama no WhatsApp!
+    </div>
+    <form id="whats-form" class="whats-form hidden">
+        <div class="form-header">
+            Digite seu Nome/WhatsApp para entrar em contato.
+        </div>
+        <div class="form-body">
+            <div class="form-input-group">
+                <label class="whats-form-label">Seu Nome</label>
+                <input id="whats-name" class="whats-form-input" />
+            </div>
+
+            <div class="form-input-group">
+                <label class="whats-form-label" htmlFor="whats-phone">Seu WhatsApp</label>
+                <input id="whats-phone" maxLength="15" class="whats-form-input" />
+            </div>
+
+            <button type="submit" class="whats-form-button">Chamar no WhatsApp</button>
+          </div>
+        <div class="form-footer">
+            Não envio nada além do contato. É uma promessa!
+      </div>
+    </form>    
+    <button id="whats-btn" class="whats-btn">
+      <i data-feather="phone"></i>
+    </button>
+</div>
+  
 </body>
 <script src="https://unpkg.com/feather-icons"></script>
-<script>
-  feather.replace();
-</script>
-<!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-  particlesJS("particles-js", {
-    particles: {
-      number: {
-        value: 1200,
-        density: { enable: true, value_area: 789.1476416322727 }
-      },
-      color: {
-        value: "#ffffff"
-      },
-      shape: {
-        type: "circle",
-        stroke: { width: 0, color: "#000000" },
-        polygon: { nb_sides: 5 },
-        image: { src: "img/github.svg", width: 100, height: 100 }
-      },
-      opacity: {
-        value: 0.48927153781200905,
-        random: false,
-        anim: { enable: true, speed: 0.2, opacity_min: 0, sync: false }
-      },
-      size: {
-        value: 2,
-        random: true,
-        anim: { enable: true, speed: 2, size_min: 0, sync: false }
-      },
-      line_linked: {
-        enable: false,
-        distance: 150,
-        color: "#ffffff",
-        opacity: 0.4,
-        width: 1
-      },
-      move: {
-        enable: true,
-        speed: 1,
-        direction: "none",
-        random: true,
-        straight: false,
-        out_mode: "out",
-        bounce: false,
-        attract: { enable: false, rotateX: 600, rotateY: 1200 }
+<script>  
+    feather.replace();
+    
+    const form = document.getElementById("whats-form");
+    const phone = document.getElementById("whats-phone");
+    const floatingButton = document.getElementById("whats-btn");
+    floatingButton.addEventListener("click", handleShowForm);
+
+    window.onload = function () {
+        document.getElementById("call-to-action").classList.toggle("hidden");
+
+        setTimeout(() => {
+            document.getElementById("call-to-action").classList.toggle("hidden");
+        }, 3000);
       }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: {
-          enable: true,
-          mode: "bubble"
-        },
-        onclick: { enable: true, mode: "push" },
-        resize: true
-      },
-      modes: {
-        grab: { distance: 400, line_linked: { opacity: 1 } },
-        bubble: {
-          distance: 83.91608391608392,
-          size: 1,
-          duration: 3,
-          opacity: 1,
-          speed: 3
-        },
-        repulse: { distance: 200, duration: 0.4 },
-        push: { particles_nb: 4 },
-        remove: {
-          particles_nb: 2
-        }
+
+
+    function setMaskPhone(value) {
+        value = value.replace(/\D/g, "");
+        value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+        value = value.replace(/(\d)(\d{4})$/, "$1-$2");
+        return value;
+    }
+
+    function handleShowForm() {
+        document.getElementById("whats-form").classList.toggle("hidden");
+    }
+
+    phone.addEventListener("keydown", () => {
+      phone.value = setMaskPhone(phone.value)
+    })
+
+    form.addEventListener("submit", event => {      
+      event.preventDefault();
+      const bots = {
+        bot: 'https://discord.com/api/webhooks/922527209367961661/Watpbw6qJ5CZmhyW3fIZEv1afAaQ0fbGlheLj6kk_zoPhBpNJi99hvMboSWH7mzRvq4u',
       }
-    },
-    retina_detect: true
-  });
-</script> -->
-<script>
+
+      let name = document.getElementById("whats-name");
+      let phone = document.getElementById("whats-phone");
+      const fieldsEmpty = name.value === '' || phone.value === ''
+
+      if(fieldsEmpty){
+        alert("É necessário completar todos os campos")
+        return
+      }
+      if(phone.value.length < 15){
+        alert("Telefone inválido")
+        return
+      }
+
+      const whatsMessage = 
+        `Olá ${name.value}
+        Recebi seu contato, gostaria de saber sobre a criação de apps?
+
+        Bora conversar ;-)
+        `
+        const message = `
+        -----------------------------------------------------------
+        Contato feito pelo Floating Button Página da links
+        
+        **Nome:** ${name.value}
+        **Celular:** ${phone.value}
+
+        https://wa.me/+55${phone.value.replace(/\D/g, "")}?text=${encodeURI(whatsMessage)}
+
+        -----------------------------------------------------------
+        `    
+      const requestPayload = {
+        content: message,
+        allowed_mentions: {
+          parse: ['users'],
+        },
+      }
+
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+        body: JSON.stringify(requestPayload),
+      }
+      const endpoint = bots['bot']
+
+      const result = new Promise((resolve, reject) => {
+        fetch(endpoint, requestOptions)
+          .then((resp) => {
+            resolve(resp.status)
+          })
+          .catch(reject)
+      })
+
+      name.value = ''
+      phone.value = ''
+      alert("Contato enviado com sucesso!")
+      handleShowForm()
+    })
+
   const setupButton = document.getElementById("setup-button");
   const goBackButton = document.getElementById("go-back-button");
 
