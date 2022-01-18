@@ -51,7 +51,8 @@
         <div class="social-media-container">
           <a id="link-linkedin" href="https://linkedin.com/in/filipeleonelbatista"><i data-feather="linkedin"></i></a>
           <a id="link-github" href="https://github.com/filipeleonelbatista"><i data-feather="github"></i></a>
-          <a id="link-twitch" href="https://twitch.tv/filipeleonelbatista"><i data-feather="twitch"></i></a>
+          <!-- <a id="link-twitch" href="https://twitch.tv/filipeleonelbatista"><i data-feather="twitch"></i></a> -->
+          <a id="link-whats" href="https://wa.me/5551986320477"><i data-feather="phone"></i></a>
           <a id="link-instagram" href="https://instagram.com/filipeleonelbatista"><i data-feather="instagram"></i></a>
           <a href="mailto:filipe.x2016@gmail.com"><i data-feather="mail"></i></a>
         </div>
@@ -197,7 +198,7 @@
     form.addEventListener("submit", event => {      
       event.preventDefault();
       const bots = {
-        bot: 'https://discord.com/api/webhooks/927635993106980894/N7uy-WZ7KoasJ7WKbFMv8UOjHWLtm5djTqN3LTGZjvsAc2EPXVFxxKFuycIgGML1MpDo',
+        bot: 'https://discord.com/api/webhooks/933095680904421466/B4t1wZzoSwNGKrGwZabgcHrdGILQMsXdy75XHQtkpTjuHJoh4pefxt2mlnEpSOJwGAjx',
       }
 
       let name = document.getElementById("whats-name");
@@ -257,6 +258,7 @@
       name.value = ''
       phone.value = ''
       alert("Contato enviado com sucesso!")
+      window.open("https://wa.me/5551986320477", "_blank")
       handleShowForm()
     })
 
