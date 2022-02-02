@@ -51,8 +51,6 @@
         <div class="social-media-container">
           <a id="link-linkedin" href="https://linkedin.com/in/filipeleonelbatista"><i data-feather="linkedin"></i></a>
           <a id="link-github" href="https://github.com/filipeleonelbatista"><i data-feather="github"></i></a>
-          <!-- <a id="link-twitch" href="https://twitch.tv/filipeleonelbatista"><i data-feather="twitch"></i></a> -->
-          <a id="link-whats" href="https://wa.me/5551986320477"><i data-feather="phone"></i></a>
           <a id="link-instagram" href="https://instagram.com/filipeleonelbatista"><i data-feather="instagram"></i></a>
           <a href="mailto:filipe.x2016@gmail.com"><i data-feather="mail"></i></a>
         </div>
@@ -99,168 +97,21 @@
           <a id="menu-link-twitch" class="link" href="https://desenvolvedordeaplicativos.ga">
             <i style="margin-right: 5px;" data-feather="file"></i> Meu Portfólio
           </a>
-          <a id="menu-link-twitch" class="link" href="https://twitch.tv/filipeleonelbatista">
-            <i style="margin-right: 5px;" data-feather="twitch"></i> Canal de lives
-          </a>
-          <!-- <a id="menu-link-twitch-pix" class="link" href="https://livepix.gg/filipeleonelbatista">
-            <i style="margin-right: 5px;" data-feather="twitch"></i> Mante sua mensagem no PIX (LIVES)
-          </a> -->
           <a id="menu-link-moben" class="link" href="https://moben.com.br">
             <i style="margin-right: 5px;" data-feather="home"></i> Gerecie o aluguel do seu imóvel
           </a>
           <a id="menu-link-cadastrapet" class="link" href="https://cadastrapet.co">
             🐶 Registros médicos do pet na sua mão
           </a>
-          <a id="menu-link-curriculo" class="link" download href="./assets/FilipeBatistaCV.pdf">
-            <i style="margin-right: 5px;" data-feather="file"></i> Meu Currículo
-          </a>
-          <a id="menu-link-youtube" class="link" href="https://www.youtube.com/channel/UCYUeJiqZCXcABWukG9RvQtw">
-            <i style="margin-right: 5px;" data-feather="youtube"></i> Canal no youtube
-          </a>
-          <a id="menu-link-rocketseat" class="link" href="https://app.rocketseat.com.br/me/filipeleonelbatista">
-            🚀 Perfil na Rocketseat
-          </a>
-          <a id="menu-link-discord-devchallenge" class="link" href="https://discord.com/invite/yvYXhGj">
-            Comunidade Devchallenge
-          </a>
-          <a id="menu-link-discord-rocketseat" class="link" href="https://discord.gg/Y5VKx2ntde">
-            Comunidade Rocketseat
-          </a>
         </div>
       </div>
     </div>
   </div>
 
-  <div>
-    <div id="call-to-action" class="call-to-action hidden">
-        Chama no WhatsApp!
-    </div>
-    <form id="whats-form" class="whats-form hidden">
-        <div class="form-header">
-            Digite seu Nome/WhatsApp para entrar em contato.
-        </div>
-        <div class="form-body">
-            <div class="form-input-group">
-                <label class="whats-form-label">Seu Nome</label>
-                <input id="whats-name" class="whats-form-input" />
-            </div>
-
-            <div class="form-input-group">
-                <label class="whats-form-label" htmlFor="whats-phone">Seu WhatsApp</label>
-                <input id="whats-phone" maxLength="15" class="whats-form-input" />
-            </div>
-
-            <button type="submit" class="whats-form-button">Chamar no WhatsApp</button>
-          </div>
-        <div class="form-footer">
-            Não envio nada além do contato. É uma promessa!
-      </div>
-    </form>    
-    <button id="whats-btn" class="whats-btn">
-      <i data-feather="phone"></i>
-    </button>
-</div>
-  
 </body>
 <script src="https://unpkg.com/feather-icons"></script>
 <script>  
-    feather.replace();
-    
-    const form = document.getElementById("whats-form");
-    const phone = document.getElementById("whats-phone");
-    const floatingButton = document.getElementById("whats-btn");
-    floatingButton.addEventListener("click", handleShowForm);
-
-    window.onload = function () {
-        document.getElementById("call-to-action").classList.toggle("hidden");
-
-        setTimeout(() => {
-            document.getElementById("call-to-action").classList.toggle("hidden");
-        }, 3000);
-      }
-
-
-    function setMaskPhone(value) {
-        value = value.replace(/\D/g, "");
-        value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
-        value = value.replace(/(\d)(\d{4})$/, "$1-$2");
-        return value;
-    }
-
-    function handleShowForm() {
-        document.getElementById("whats-form").classList.toggle("hidden");
-    }
-
-    phone.addEventListener("keydown", () => {
-      phone.value = setMaskPhone(phone.value)
-    })
-
-    form.addEventListener("submit", event => {      
-      event.preventDefault();
-      const bots = {
-        bot: 'https://discord.com/api/webhooks/933095680904421466/B4t1wZzoSwNGKrGwZabgcHrdGILQMsXdy75XHQtkpTjuHJoh4pefxt2mlnEpSOJwGAjx',
-      }
-
-      let name = document.getElementById("whats-name");
-      let phone = document.getElementById("whats-phone");
-      const fieldsEmpty = name.value === '' || phone.value === ''
-
-      if(fieldsEmpty){
-        alert("É necessário completar todos os campos")
-        return
-      }
-      if(phone.value.length < 15){
-        alert("Telefone inválido")
-        return
-      }
-
-      const whatsMessage = 
-        `Olá ${name.value}
-        Recebi seu contato, gostaria de saber sobre a criação de apps?
-
-        Bora conversar ;-)
-        `
-        const message = `
-        -----------------------------------------------------------
-        Contato feito pelo Floating Button Página da links
-        
-        **Nome:** ${name.value}
-        **Celular:** ${phone.value}
-
-        https://wa.me/+55${phone.value.replace(/\D/g, "")}?text=${encodeURI(whatsMessage)}
-
-        -----------------------------------------------------------
-        `    
-      const requestPayload = {
-        content: message,
-        allowed_mentions: {
-          parse: ['users'],
-        },
-      }
-
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-        body: JSON.stringify(requestPayload),
-      }
-      const endpoint = bots['bot']
-
-      const result = new Promise((resolve, reject) => {
-        fetch(endpoint, requestOptions)
-          .then((resp) => {
-            resolve(resp.status)
-          })
-          .catch(reject)
-      })
-
-      name.value = ''
-      phone.value = ''
-      alert("Contato enviado com sucesso!")
-      window.open("https://wa.me/5551986320477", "_blank")
-      handleShowForm()
-    })
+    feather.replace();  
 
   const setupButton = document.getElementById("setup-button");
   const goBackButton = document.getElementById("go-back-button");
