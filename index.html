@@ -13,7 +13,12 @@
   <script>
     function handlePix() {
       const chave = '51991759045'
-      console.log("pix")
+
+      // Copy the text inside the text field
+      navigator.clipboard.writeText(chave);
+
+      // Alert the copied text
+      alert("Chave pix copiada: " + chave);
     }
   </script>
 </head>
@@ -21,7 +26,9 @@
 <body>
   <div id="particles-js"></div>
   <div class="container">
-    <img class="profile" src="https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/a37169582f6fb34231f94d9945bf5d9c~c5_100x100.jpeg?x-expires=1663948800&x-signature=D8RiZQo1L016KNJGCFAz3%2Fc1UWI%3D" alt="Tainá Kich" />
+    <img class="profile"
+      src="https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/a37169582f6fb34231f94d9945bf5d9c~c5_100x100.jpeg?x-expires=1663948800&x-signature=D8RiZQo1L016KNJGCFAz3%2Fc1UWI%3D"
+      alt="Tainá Kich" />
 
     <h2>Tainá Kich</h2>
     <p class="subtitle">Empresária, Criadora de conteúdo</p>
@@ -172,21 +179,21 @@
   });
 </script>
 <script>
-  const setupButton = document.getElementById("setup-button");
-  const goBackButton = document.getElementById("go-back-button");
+  // const setupButton = document.getElementById("setup-button");
+  // const goBackButton = document.getElementById("go-back-button");
 
-  setupButton.addEventListener("click", showContent);
-  goBackButton.addEventListener("click", hideContent);
+  // setupButton.addEventListener("click", showContent);
+  // goBackButton.addEventListener("click", hideContent);
 
-  function showContent() {
-    document.getElementById("secondary-content").classList.remove("hide");
-    document.getElementById("secondary-content").classList.add("show");
-  }
+  // function showContent() {
+  //   document.getElementById("secondary-content").classList.remove("hide");
+  //   document.getElementById("secondary-content").classList.add("show");
+  // }
 
-  function hideContent() {
-    document.getElementById("secondary-content").classList.remove("show");
-    document.getElementById("secondary-content").classList.add("hide");
-  }
+  // function hideContent() {
+  //   document.getElementById("secondary-content").classList.remove("show");
+  //   document.getElementById("secondary-content").classList.add("hide");
+  // }
 
 </script>
 
