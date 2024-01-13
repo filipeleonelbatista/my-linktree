@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
   <title>Lisandra Batista | Líder de Negócios Natura e Avon</title>
 </head>
 
@@ -29,7 +31,7 @@
 
       <div class="content">
         <div id="secondary-content" class="secondary-content">
-          <h3> <i id="go-back-button" data-feather="arrow-left"></i>Proximos ciclos</h3>          
+          <h3> <i id="go-back-button" data-feather="arrow-left"></i>Revistas Ciclo 02</h3>
           <a href="https://natura.com.vc/02_sao_paulo_e_sul-pi57v" class="link">
             📖 Revista Natura Ciclo 02
           </a>
@@ -38,15 +40,10 @@
           </a>
           <a href="https://avon.com.vc/02_casa_-2dbio" class="link">
             📖 Revista Casa & Estilo Avon Ciclo 02
-          </a>   
+          </a>
         </div>
-        <div class="main-content">
-          <a href="https://wa.me/5551984941682?text=Ola,%20quero%20ser%20uma%20consultora%20Natura%20e%20Avon" class="link highlight">
-            💄 Seja uma consultora
-          </a>
-          <a href="https://www.natura.com.br/consultoria/lisandrab" class="link">
-            ⭐️ Minha loja Natura
-          </a>
+        <div id="terceary-content" class="secondary-content">
+          <h3> <i id="go-back-button-2" data-feather="arrow-left"></i>Revistas Ciclo 01</h3>
           <a href="https://natura.com.vc/01_sao_paul_e_sul-6yful" class="link">
             📖 Revista Natura Ciclo 01
           </a>
@@ -55,14 +52,26 @@
           </a>
           <a href="https://avon.com.vc/01_casa_-nl7vk" class="link">
             📖 Revista Casa & Estilo Avon Ciclo 01
-          </a>          
+          </a>
+        </div>
+        <div class="main-content">
+          <a href="https://wa.me/5551984941682?text=Ola,%20quero%20ser%20uma%20consultora%20Natura%20e%20Avon"
+            class="link highlight">
+            💄 Seja uma consultora
+          </a>
+          <a href="https://www.natura.com.br/consultoria/lisandrab" class="link">
+            ⭐️ Minha loja Natura
+          </a>
           <!-- <a href="https://conecta.avon.com.br/revista/?campanha=09&ano=2023&representante=77933549" class="link">
             📖 Revista Digital Prox. Campanha
           </a> -->
+          <a id="setup-button-2" class="link">
+            Revistas Ciclo 01 <i style="margin-left: 5px;" data-feather="arrow-right"></i>
+          </a>
           <a id="setup-button" class="link">
-            💄 Proximos ciclos <i style="margin-left: 5px;" data-feather="arrow-right"></i>
-          </a> 
-<!--           <p>Promoções da campanha 👇🏻</p> -->
+            Revistas Ciclo 02 <i style="margin-left: 5px;" data-feather="arrow-right"></i>
+          </a>
+          <!--           <p>Promoções da campanha 👇🏻</p> -->
           <div class="video-container">
             <iframe src="https://www.youtube.com/embed/FqTIlOHaws8" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -154,7 +163,7 @@
 <script>
   const setupButton = document.getElementById("setup-button");
   const goBackButton = document.getElementById("go-back-button");
-
+  
   setupButton.addEventListener("click", showContent);
   goBackButton.addEventListener("click", hideContent);
 
@@ -167,6 +176,23 @@
     document.getElementById("secondary-content").classList.remove("show");
     document.getElementById("secondary-content").classList.add("hide");
   }
+
+  const setupButton2 = document.getElementById("setup-button-2");
+  const goBackButton2 = document.getElementById("go-back-button-2");
+
+  setupButton2.addEventListener("click", showContent2);
+  goBackButton2.addEventListener("click", hideContent);
+  
+  function showContent2() {
+    document.getElementById("terceary-content").classList.remove("hide");
+    document.getElementById("terceary-content").classList.add("show");
+  }
+
+function hideContent2() {
+  document.getElementById("terceary-content").classList.remove("show");
+  document.getElementById("terceary-content").classList.add("hide");
+}
+
 
 </script>
 
