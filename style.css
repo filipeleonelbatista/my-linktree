@@ -175,6 +175,16 @@ body {
   margin: 20px 0;
 }
 
+
+.video-container-reels {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
 .video-container iframe {
   position: absolute;
   width: 100%;
